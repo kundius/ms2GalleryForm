@@ -4,6 +4,7 @@
 $ms2GalleryForm = $modx->getService('ms2GalleryForm', 'ms2GalleryForm', MODX_CORE_PATH . 'components/ms2galleryform/model/ms2galleryform/');
 $ms2GalleryForm->initialize($modx->context->key, $scriptProperties);
 
+$resource_id = $ms2GalleryForm->config['resource_id'] = $modx->getOption('resource_id', $scriptProperties, $modx->resource->id);
 $tplForm = $ms2GalleryForm->config['tplForm'] = $modx->getOption('tplForm', $scriptProperties, 'tpl.ms2GalleryForm.form');
 $tplFiles = $ms2GalleryForm->config['tplFiles'] = $modx->getOption('tplFiles', $scriptProperties, 'tpl.ms2GalleryForm.files');
 $tplFile = $ms2GalleryForm->config['tplFile'] = $modx->getOption('tplFile', $scriptProperties, 'tpl.ms2GalleryForm.file', true);
@@ -26,8 +27,9 @@ foreach ($collection as $item) {
     $files .= $modx->getChunk($tpl, $item);
 }
 $data['files'] = $modx->getChunk($tplFiles, array(
-    'files' => $files,
+    'files' => $files
 ));
+$data['resource_id'] = $resource_id;
 
 $output = $modx->getChunk($tplForm, $data);
 // print_r($ms2GalleryForm->config);
