@@ -1,0 +1,25 @@
+@import url("./lib/jquery.jgrowl.css");
+
+/* Form files */
+#ms2galleryform-files-container {margin-top: 10px;}
+#ms2galleryform-files-select {font-weight: bold;}
+#ms2galleryform-files-progress,
+#ms2galleryform-files-list .ms2galleryform-file-template {display:none;}
+#ms2galleryform-files-progress-count {}
+#ms2galleryform-files-progress-percent {float:right;}
+#ms2galleryform-files-progress-bar {height: 1.5em; background: lightblue; margin-top:5px; width: 0;}
+
+.clearfix {clear: both;}
+#ms2galleryform-files-list {padding: 10px 0; background: #fff; border: 1px solid #ccc; border-radius: 5px; min-height: 50px;}
+#ms2galleryform-files-list .ms2galleryform-file {width: 120px; float:left; margin: 5px 0 5px 10px; outline: 1px solid #efefef;}
+#ms2galleryform-files-list .ms2galleryform-file-image-wrapper {width: 120px; height: 90px; overflow:hidden;}
+#ms2galleryform-files-list .ms2galleryform-file-image {width: 120px; border: 1px solid #efefef;}
+#ms2galleryform-files-list .ms2galleryform-file-size {color: #777; float: right;}
+
+#ms2galleryform-files-list.droppable {border-width: 3px; border-style: dashed;}
+#ms2galleryform-files-list.dragover {border-color: darkgreen;}
+#ms2galleryform-files-list .ms2galleryform-file-meta {font-size: .8em; padding: 0 5px;}
+
+#ms2galleryform-files-list .ms2galleryform-file.new {outline-color: lightblue;}
+
+#ms2galleryform-files-list .ms2galleryform-file .ms2galleryform-file-remove {color: darkred;}
