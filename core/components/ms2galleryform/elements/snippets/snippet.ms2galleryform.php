@@ -11,7 +11,7 @@ $tplFile = $ms2GalleryForm->config['tplFile'] = $modx->getOption('tplFile', $scr
 $tplImage = $ms2GalleryForm->config['tplImage'] = $modx->getOption('tplImage', $scriptProperties, 'tpl.ms2GalleryForm.image', true);
 
 $q = $modx->newQuery('msResourceFile');
-$q->andCondition(array('parent' => 0, 'resource_id' => $modx->resource->id, 'createdby' => $modx->user->id), null, 1);
+$q->andCondition(array('parent' => 0, 'resource_id' => $resource_id, 'createdby' => $modx->user->id), null, 1);
 
 $q->sortby('createdon', 'ASC');
 $collection = $modx->getIterator('msResourceFile', $q);
