@@ -6,6 +6,7 @@ class ms2GalleryForm {
     /** @var modMediaSource $mediaSource */
     public $ms2Gallery;
     public $initialized = array();
+    public $authenticated = false;
 
     /**
      * @param modX $modx
@@ -38,6 +39,8 @@ class ms2GalleryForm {
 
         $this->modx->addPackage('ms2galleryForm', $this->config['modelPath']);
         $this->modx->lexicon->load('ms2galleryform:default');
+
+        $this->authenticated = $this->modx->user->isAuthenticated($this->modx->context->get('key'));
     }
 
 
@@ -115,9 +118,9 @@ class ms2GalleryForm {
      * @return array|string
      */
     public function fileUpload($data) {
-//        if (!$this->authenticated || empty($this->config['allowFiles'])) {
-//            return $this->error('ms2galleryform_err_access_denied');
-//        }
+        if (!$this->authenticated) {
+            return $this->error('ms2galleryform_err_access_denied');
+        }
 
         /** @var modProcessorResponse $response */
         $response = $this->modx->runProcessor('web/gallery/upload', $data, array(
@@ -127,7 +130,6 @@ class ms2GalleryForm {
             return $this->error($response->getMessage());
         }
         $file = $response->getObject();
-        $this->modx->log(null,$this->modx->toJSON($file));
         $file['size'] = round($file['properties']['size'] / 1024, 2);
 
         $tpl = $file['type'] == 'image'
@@ -147,9 +149,9 @@ class ms2GalleryForm {
      * @return array|string
      */
     public function fileRemove($id) {
-//        if (!$this->authenticated || empty($this->config['allowFiles'])) {
-//            return $this->error('ms2galleryform_err_access_denied');
-//        }
+        if (!$this->authenticated) {
+            return $this->error('ms2galleryform_err_access_denied');
+        }
         /** @var modProcessorResponse $response */
         $response = $this->modx->runProcessor('web/gallery/remove', array('id' => $id), array(
             'processors_path' => $this->config['corePath'] . 'processors/'
