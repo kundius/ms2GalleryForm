@@ -7,6 +7,7 @@ $_lang['ms2galleryform_file_select'] = 'Select files';
 $_lang['ms2galleryform_file_remove'] = 'Delete';
 $_lang['ms2galleryform_file_restore'] = 'Restore';
 $_lang['ms2galleryform_file_insert'] = 'Insert link';
+$_lang['ms2galleryform_err_access_denied'] = 'Access denied!';
 $_lang['ms2galleryform_err_source_initialize'] = 'Could not initialize media source';
 $_lang['ms2galleryform_err_file_ns'] = 'Could not process specified file';
 $_lang['ms2galleryform_err_file_ext'] = 'Wrong file extension';
