@@ -7,6 +7,7 @@ $_lang['ms2galleryform_file_select'] = 'Выберите файлы';
 $_lang['ms2galleryform_file_remove'] = 'Удалить';
 $_lang['ms2galleryform_file_restore'] = 'Восстановить';
 $_lang['ms2galleryform_file_insert'] = 'Вставить ссылку';
+$_lang['ms2galleryform_err_access_denied'] = 'Доступ запрещен!';
 $_lang['ms2galleryform_err_source_initialize'] = 'Не могу инициализировать хранилище файлов';
 $_lang['ms2galleryform_err_file_ns'] = 'Не могу обработать указанный файл';
 $_lang['ms2galleryform_err_file_ext'] = 'Неправильно расширение файла';
