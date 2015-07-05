@@ -12,8 +12,9 @@
 .clearfix {clear: both;}
 .ms2galleryform-files-list {padding: 10px 0; background: #fff; border: 1px solid #ccc; border-radius: 5px; min-height: 50px;}
 .ms2galleryform-files-list .ms2galleryform-file {width: 120px; float:left; margin: 5px 0 5px 10px; outline: 1px solid #efefef;}
-.ms2galleryform-files-list .ms2galleryform-file-image-wrapper {width: 120px; height: 90px; overflow:hidden;}
-.ms2galleryform-files-list .ms2galleryform-file-image {width: 120px; border: 1px solid #efefef;}
+.ms2galleryform-files-list .ms2galleryform-file-image-wrapper {width: 120px; height: 90px; overflow:hidden;
+    margin-bottom: 10px;}
+.ms2galleryform-files-list .ms2galleryform-file-image {max-height: 100%;display: block;margin: 0 auto;}
 .ms2galleryform-files-list .ms2galleryform-file-size {color: #777; float: right;}
 
 .ms2galleryform-files-list.droppable {border-width: 3px; border-style: dashed;}
